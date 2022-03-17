@@ -1,0 +1,17 @@
+---
+- hosts: influxdb
+  remote_user: root
+  vars:
+    influxdb_admin_username: admin
+    influxdb_admin_password: admin
+    influxdb_databases:
+      - name: telegraf
+        state: present
+    influxdb_users:
+      - name: telegraf
+        password: telegraf
+        grants:
+          - database: telegraf-metrics
+            privilege: "WRITE"
+  roles: 
+    - influxdb

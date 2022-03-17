@@ -1,0 +1,2 @@
+[influxdb]
+172.25.148.99 ansible_user=cuongph ansible_password=Huucuong1998!  ansible_connection=local
