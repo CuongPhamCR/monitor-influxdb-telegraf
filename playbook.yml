@@ -1,6 +1,9 @@
 ---
 - hosts: influxdb
   remote_user: root
+  become: yes
+  become_user: root
+  become_method: sudo
   vars:
     influxdb_admin_username: admin
     influxdb_admin_password: admin
